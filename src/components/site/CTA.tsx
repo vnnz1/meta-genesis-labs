@@ -3,23 +3,23 @@ import { Magnetic } from "./Magnetic";
 export function CTA() {
   return (
     <section id="contact" className="relative overflow-hidden bg-ink">
-      <div className="mx-auto max-w-[1400px] px-6 py-32 sm:px-10 sm:py-48">
+      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-48">
         <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
           [ 05 ] — Próximo ciclo
         </p>
-        <h2 className="mt-6 max-w-[1100px] font-display text-[clamp(2.4rem,7vw,6.5rem)] font-light leading-[0.98] tracking-[-0.03em] text-bone">
-          <span className="italic text-steel">Se o seu negócio</span> precisa de um
+        <h2 className="mt-6 max-w-[1100px] font-display text-[clamp(2.1rem,7vw,6.5rem)] font-light leading-[1] tracking-[-0.03em] text-bone">
+          <span className="text-steel">Se o seu negócio</span> precisa de um
           sistema que <span className="text-bone">não exista ainda</span>, nós o forjamos.
         </h2>
 
-        <div className="mt-14 grid gap-10 border-t border-bone/10 pt-10 sm:grid-cols-[1fr_auto] sm:items-end">
-          <div className="space-y-2">
+        <div className="mt-12 grid gap-8 border-t border-bone/10 pt-10 sm:mt-14 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+          <div className="min-w-0 space-y-2">
             <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel">
               Canal direto
             </div>
             <a
               href="mailto:hello@metaforge.studio"
-              className="block font-display text-3xl font-light tracking-[-0.01em] text-bone underline-offset-8 hover:underline sm:text-5xl"
+              className="block break-all font-display text-2xl font-light tracking-[-0.01em] text-bone underline-offset-8 hover:underline sm:text-4xl lg:text-5xl"
             >
               hello@metaforge.studio
             </a>

@@ -37,9 +37,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,transparent_0%,oklch(0.06_0_0/0.55)_55%,oklch(0.06_0_0)_85%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-between px-6 pb-10 pt-32 sm:px-10 sm:pt-40 lg:pt-48">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-between gap-12 px-5 pb-10 pt-28 sm:gap-16 sm:px-10 sm:pt-40 lg:pt-48">
         {/* Top meta row */}
-        <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.28em] text-steel sm:text-[11px]">
+        <div className="flex items-start justify-between gap-6 font-mono text-[10px] uppercase tracking-[0.28em] text-steel sm:text-[11px]">
           <div className="space-y-1">
             <div>// system.online</div>
             <div className="text-bone/70">v.04 — 2026</div>
@@ -51,23 +51,23 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-        <div className="max-w-[1100px] py-16 sm:py-24">
+        <div className="max-w-[1100px] py-8 sm:py-20">
           <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
             [ 01 ] — Manifesto
           </p>
-          <h1 className="font-display text-[clamp(2.4rem,6.4vw,5.6rem)] font-light leading-[1.02] tracking-[-0.02em] text-bone">
+          <h1 className="font-display text-[clamp(2rem,6.4vw,5.6rem)] font-light leading-[1.04] tracking-[-0.02em] text-bone">
             <Typewriter text={HEADLINE} />
           </h1>
-          <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-steel sm:text-lg">
+          <p className="mt-6 max-w-2xl text-[15px] font-light leading-relaxed text-steel sm:mt-8 sm:text-lg">
             Criamos sistemas, plataformas, automações e produtos digitais
             projetados para empresas que pretendem liderar seus mercados.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
             <Magnetic>
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-bone px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90"
+                className="group inline-flex items-center gap-3 rounded-full bg-bone px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90 sm:px-6 sm:py-3.5 sm:text-[11px]"
               >
                 Forjar um sistema
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -76,7 +76,7 @@ export function Hero() {
             <Magnetic strength={0.25}>
               <a
                 href="#cases"
-                className="inline-flex items-center gap-3 px-2 py-3.5 font-mono text-[11px] uppercase tracking-[0.22em] text-bone/80 transition-colors hover:text-bone"
+                className="inline-flex items-center gap-3 px-2 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-bone/80 transition-colors hover:text-bone sm:py-3.5 sm:text-[11px]"
               >
                 <span className="inline-block h-px w-8 bg-bone/40" />
                 Ver operações
@@ -93,9 +93,9 @@ export function Hero() {
             ["99.99%", "SLA operacional"],
             ["7", "Mercados atendidos"],
           ].map(([k, v]) => (
-            <div key={v} className="bg-ink px-5 py-5 sm:px-6 sm:py-7">
-              <div className="font-display text-3xl font-light text-bone sm:text-4xl">{k}</div>
-              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-steel">
+            <div key={v} className="bg-ink px-4 py-5 sm:px-6 sm:py-7">
+              <div className="font-display text-2xl font-light text-bone sm:text-4xl">{k}</div>
+              <div className="mt-1 font-mono text-[9px] uppercase leading-tight tracking-[0.22em] text-steel sm:text-[10px]">
                 {v}
               </div>
             </div>

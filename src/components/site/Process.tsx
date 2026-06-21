@@ -24,19 +24,19 @@ const STEPS = [
 export function Process() {
   return (
     <section id="process" className="relative bg-ink">
-      <div className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 sm:py-40">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-10 sm:py-40">
         <div className="border-b border-bone/10 pb-8">
           <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
             [ 04 ] — Método
           </p>
-          <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
+          <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.85rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
             Um processo. Sem improviso. Sem ruído.
           </h2>
         </div>
 
-        <div className="grid gap-px overflow-hidden bg-bone/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-px overflow-hidden border border-bone/10 bg-bone/10 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => (
-            <div key={s.code} className="group relative bg-ink p-8 sm:p-10">
+            <div key={s.code} className="group relative bg-ink p-7 sm:p-10">
               <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel">
                 {s.code}
               </div>

@@ -67,25 +67,25 @@ export function Services() {
   return (
     <section id="services" className="relative bg-ink">
       {/* Section header */}
-      <div className="mx-auto max-w-[1400px] px-6 pt-28 sm:px-10 sm:pt-40">
-        <div className="flex items-end justify-between gap-8 border-b border-bone/10 pb-8">
-          <div>
+      <div className="mx-auto max-w-[1400px] px-5 pt-20 sm:px-10 sm:pt-40">
+        <div className="flex flex-col gap-6 border-b border-bone/10 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+          <div className="min-w-0">
             <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
               [ 02 ] — Operações
             </p>
-            <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
+            <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.85rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
               Cinco disciplinas. Uma única engenharia.
             </h2>
           </div>
-          <div className="hidden text-right font-mono text-[10px] uppercase tracking-[0.22em] text-steel sm:block">
+          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-steel sm:text-right">
             {String(active + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}
           </div>
         </div>
       </div>
 
       {/* Sticky split layout */}
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
-        <div className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[1fr_1fr] lg:gap-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-10">
+        <div className="grid gap-10 py-12 sm:gap-12 sm:py-24 lg:grid-cols-[1fr_1fr] lg:gap-20">
           {/* Left — sticky title board */}
           <div className="lg:sticky lg:top-32 lg:h-[60vh]">
             <div className="space-y-6">
