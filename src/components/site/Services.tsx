@@ -45,7 +45,7 @@ const SERVICES = [
 
 export function Services() {
   const [active, setActive] = useState(0);
-  const itemsRef = useRef<Array<HTMLDivElement | null>>([]);
+  const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
 
   // Drive the active service from scroll position over each panel.
   useEffect(() => {
