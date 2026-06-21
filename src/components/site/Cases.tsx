@@ -47,28 +47,28 @@ const CASES = [
 export function Cases() {
   return (
     <section id="cases" className="relative bg-ink">
-      <div className="mx-auto max-w-[1400px] px-6 pt-28 sm:px-10 sm:pt-40">
-        <div className="flex items-end justify-between gap-8 border-b border-bone/10 pb-8">
-          <div>
+      <div className="mx-auto max-w-[1400px] px-5 pt-20 sm:px-10 sm:pt-40">
+        <div className="flex flex-col gap-6 border-b border-bone/10 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+          <div className="min-w-0">
             <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
               [ 03 ] — Operações em produção
             </p>
-            <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
+            <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.85rem,4.4vw,3.6rem)] font-light leading-[1.05] tracking-[-0.02em] text-bone">
               Resultado é a única forma de design.
             </h2>
           </div>
-          <p className="hidden max-w-xs text-sm text-steel sm:block">
+          <p className="max-w-xs text-sm text-steel">
             Indicadores auditados com nossos parceiros. Nomes sob NDA — métricas são reais.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-10">
         <div className="divide-y divide-bone/10 border-b border-bone/10">
           {CASES.map((c, i) => (
             <article
               key={c.code}
-              className="group grid gap-8 py-14 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16"
+              className="group grid gap-7 py-12 sm:gap-8 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16"
             >
               <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-bone/10 bg-graphite">
                 <img
@@ -93,15 +93,15 @@ export function Cases() {
                   <h3 className="mt-3 max-w-xl font-display text-3xl font-light leading-[1.1] tracking-[-0.01em] text-bone sm:text-4xl">
                     {c.title}
                   </h3>
-                  <p className="mt-5 max-w-xl text-sm leading-relaxed text-steel sm:text-base">
+                <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-steel sm:mt-5 sm:text-base">
                     {c.body}
                   </p>
                 </div>
 
-                <dl className="mt-10 grid grid-cols-3 gap-px overflow-hidden border border-bone/10 bg-bone/10">
+              <dl className="mt-8 grid grid-cols-3 gap-px overflow-hidden border border-bone/10 bg-bone/10 sm:mt-10">
                   {c.metrics.map(([k, v]) => (
-                    <div key={v} className="bg-ink px-4 py-5">
-                      <dt className="font-display text-2xl font-light text-bone sm:text-3xl">{k}</dt>
+                  <div key={v} className="bg-ink px-3 py-4 sm:px-4 sm:py-5">
+                    <dt className="font-display text-xl font-light text-bone sm:text-3xl">{k}</dt>
                       <dd className="mt-1 font-mono text-[9px] uppercase leading-tight tracking-[0.22em] text-steel sm:text-[10px]">
                         {v}
                       </dd>

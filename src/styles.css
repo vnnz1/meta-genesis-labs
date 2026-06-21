@@ -55,8 +55,8 @@
   --color-bone: var(--bone);
   --color-steel: var(--steel);
   --color-graphite: var(--graphite);
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 

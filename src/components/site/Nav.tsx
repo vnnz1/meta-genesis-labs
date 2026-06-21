@@ -10,8 +10,8 @@ const links = [
 export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 sm:px-10 sm:py-6">
-        <a href="#top" className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-bone">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-10 sm:py-6">
+        <a href="#top" className="flex shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-bone sm:text-[11px]">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-bone" />
           MetaForge<span className="text-steel">®</span>
         </a>
@@ -32,13 +32,14 @@ export function Nav() {
         <Magnetic>
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 rounded-full border border-bone/15 bg-bone/[0.02] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-bone backdrop-blur transition-colors hover:border-bone/40 sm:px-5"
+            className="group relative inline-flex shrink-0 items-center gap-2 rounded-full border border-bone/15 bg-bone/[0.02] px-3.5 py-2 font-mono text-[10px] uppercase tracking-[0.22em] text-bone backdrop-blur transition-colors hover:border-bone/40 sm:px-5 sm:text-[11px]"
           >
             <span className="relative h-1.5 w-1.5">
               <span className="absolute inset-0 rounded-full bg-bone" />
               <span className="absolute inset-0 animate-ping rounded-full bg-bone/70" />
             </span>
-            Iniciar projeto
+            <span className="hidden xs:inline sm:inline">Iniciar projeto</span>
+            <span className="xs:hidden sm:hidden">Iniciar</span>
           </a>
         </Magnetic>
       </div>
