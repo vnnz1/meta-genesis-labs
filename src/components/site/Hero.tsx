@@ -1,0 +1,107 @@
+import { useEffect, useState } from "react";
+import { ForgeCanvas } from "./ForgeCanvas";
+import { Magnetic } from "./Magnetic";
+
+const HEADLINE = "Nós construímos a infraestrutura digital da próxima geração.";
+
+function Typewriter({ text }: { text: string }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (i >= text.length) return;
+    const t = setTimeout(() => setI(i + 1), 28 + Math.random() * 38);
+    return () => clearTimeout(t);
+  }, [i, text]);
+
+  return (
+    <span aria-label={text}>
+      <span aria-hidden>{text.slice(0, i)}</span>
+      <span
+        aria-hidden
+        className="ml-[2px] inline-block h-[0.85em] w-[2px] -translate-y-[0.05em] translate-x-0 bg-bone align-middle"
+        style={{ animation: "mf-caret 1.05s steps(2) infinite" }}
+      />
+    </span>
+  );
+}
+
+export function Hero() {
+  return (
+    <section
+      id="top"
+      className="grain relative isolate flex min-h-[100svh] w-full flex-col overflow-hidden bg-ink"
+    >
+      {/* Background 3D forge */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <ForgeCanvas />
+        {/* Radial vignette to anchor type */}
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,transparent_0%,oklch(0.06_0_0/0.55)_55%,oklch(0.06_0_0)_85%)]" />
+      </div>
+
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-between px-6 pb-10 pt-32 sm:px-10 sm:pt-40 lg:pt-48">
+        {/* Top meta row */}
+        <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.28em] text-steel sm:text-[11px]">
+          <div className="space-y-1">
+            <div>// system.online</div>
+            <div className="text-bone/70">v.04 — 2026</div>
+          </div>
+          <div className="hidden text-right sm:block">
+            <div>São Paulo · Berlin · Remote</div>
+            <div className="text-bone/70">lat —23.5505 / lng —46.6333</div>
+          </div>
+        </div>
+
+        {/* Headline */}
+        <div className="max-w-[1100px] py-16 sm:py-24">
+          <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
+            [ 01 ] — Manifesto
+          </p>
+          <h1 className="font-display text-[clamp(2.4rem,6.4vw,5.6rem)] font-light leading-[1.02] tracking-[-0.02em] text-bone">
+            <Typewriter text={HEADLINE} />
+          </h1>
+          <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-steel sm:text-lg">
+            Criamos sistemas, plataformas, automações e produtos digitais
+            projetados para empresas que pretendem liderar seus mercados.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Magnetic>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-bone px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90"
+              >
+                Forjar um sistema
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.25}>
+              <a
+                href="#cases"
+                className="inline-flex items-center gap-3 px-2 py-3.5 font-mono text-[11px] uppercase tracking-[0.22em] text-bone/80 transition-colors hover:text-bone"
+              >
+                <span className="inline-block h-px w-8 bg-bone/40" />
+                Ver operações
+              </a>
+            </Magnetic>
+          </div>
+        </div>
+
+        {/* Bottom stat strip */}
+        <div className="grid grid-cols-2 gap-px overflow-hidden border-y border-bone/10 bg-bone/10 sm:grid-cols-4">
+          {[
+            ["48", "Sistemas em produção"],
+            ["12M+", "Requisições / mês"],
+            ["99.99%", "SLA operacional"],
+            ["7", "Mercados atendidos"],
+          ].map(([k, v]) => (
+            <div key={v} className="bg-ink px-5 py-5 sm:px-6 sm:py-7">
+              <div className="font-display text-3xl font-light text-bone sm:text-4xl">{k}</div>
+              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-steel">
+                {v}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
