@@ -23,8 +23,12 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section id="process" className="relative bg-ink">
-      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-10 sm:py-40">
+    <section id="process" className="relative overflow-hidden bg-ink">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+        <div className="atmos-glow atmos-glow-warm left-[-15%] top-[20%] h-[50vmax] w-[50vmax] opacity-20" />
+        <div className="atmos-glow atmos-glow-cool right-[-10%] bottom-[-10%] h-[55vmax] w-[55vmax] opacity-25" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 py-20 sm:px-10 sm:py-40">
         <div className="border-b border-bone/10 pb-8">
           <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
             [ 04 ] — Método
@@ -34,9 +38,9 @@ export function Process() {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-px overflow-hidden border border-bone/10 bg-bone/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => (
-            <div key={s.code} className="group relative bg-ink p-7 sm:p-10">
+            <div key={s.code} className="glass-panel group relative rounded-sm p-7 sm:p-10">
               <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel">
                 {s.code}
               </div>

@@ -31,7 +31,11 @@ const QUOTES = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative bg-ink">
+    <section id="testimonials" className="relative overflow-hidden bg-ink">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+        <div className="atmos-glow atmos-glow-cool right-[-10%] top-[10%] h-[50vmax] w-[50vmax] opacity-25" />
+        <div className="atmos-glow atmos-glow-soft left-[-10%] bottom-[-10%] h-[50vmax] w-[50vmax]" />
+      </div>
       <div className="mx-auto max-w-[1400px] px-6 pt-24 sm:px-10 sm:pt-32 lg:pt-40">
         <div className="flex flex-col gap-6 border-b border-bone/10 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
           <div>
@@ -49,12 +53,12 @@ export function Testimonials() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-6 py-12 sm:px-10 sm:py-20">
-        <div className="grid gap-px overflow-hidden border border-bone/10 bg-bone/10 md:grid-cols-2">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-12 sm:px-10 sm:py-20">
+        <div className="grid gap-5 md:grid-cols-2">
           {QUOTES.map((q) => (
             <figure
               key={q.code}
-              className="relative flex flex-col justify-between gap-8 bg-ink p-7 sm:p-10"
+              className="glass-panel relative flex flex-col justify-between gap-8 rounded-sm p-7 sm:p-10"
             >
               <span
                 aria-hidden
