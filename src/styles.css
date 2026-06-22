@@ -252,6 +252,14 @@
 .depth-mid    { filter: blur(3px); }
 .depth-fg     { filter: blur(0); }
 
+/* Continuous scroll-driven blur. ScrollBlur.tsx writes
+ * --sb-blur and --sb-opacity into each element every frame. */
+.scroll-blur {
+  filter: blur(var(--sb-blur, 0px));
+  opacity: var(--sb-opacity, 1);
+  will-change: filter, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mf-reveal,
   .mf-reveal-scale {
