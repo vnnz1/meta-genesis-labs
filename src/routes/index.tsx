@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Process } from "@/components/site/Process";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,14 +43,14 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <Marquee />
-        <Services />
-        <Cases />
-        <Testimonials />
-        <Process />
-        <CTA />
+        <Reveal variant="blur"><Marquee /></Reveal>
+        <Reveal variant="blur"><Services /></Reveal>
+        <Reveal variant="scale"><Cases /></Reveal>
+        <Reveal variant="blur"><Testimonials /></Reveal>
+        <Reveal variant="blur"><Process /></Reveal>
+        <Reveal variant="scale"><CTA /></Reveal>
       </main>
-      <Footer />
+      <Reveal variant="blur"><Footer /></Reveal>
     </div>
   );
 }
