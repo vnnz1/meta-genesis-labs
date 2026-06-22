@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode, type ElementType } from "react";
+import { createElement, useEffect, useRef, type ReactNode } from "react";
 
 /**
  * Reveal — scroll-driven cinematic emergence.
@@ -16,8 +16,8 @@ interface RevealProps {
   variant?: "blur" | "scale";
   /** Stagger delay in ms. */
   delay?: number;
-  /** Underlying tag. */
-  as?: ElementType;
+  /** Underlying tag — defaults to a div. */
+  as?: "div" | "section" | "article" | "li" | "header" | "footer";
   /** Reveal once and stop, or also fade out on exit. */
   once?: boolean;
 }
@@ -60,13 +60,13 @@ export function Reveal({
 
   const base = variant === "scale" ? "mf-reveal-scale" : "mf-reveal";
 
-  return (
-    <As
-      ref={ref as never}
-      className={`${base} ${className}`.trim()}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </As>
+  return createElement(
+    As,
+    {
+      ref,
+      className: `${base} ${className}`.trim(),
+      style: delay ? { transitionDelay: `${delay}ms` } : undefined,
+    },
+    children,
   );
 }
