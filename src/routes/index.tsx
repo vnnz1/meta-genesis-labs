@@ -11,6 +11,7 @@ import { Process } from "@/components/site/Process";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
+import { ScrollBlur } from "@/components/site/ScrollBlur";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,17 +41,18 @@ function Index() {
     <div className="relative min-h-screen bg-ink text-bone antialiased">
       <SmoothScroll />
       <Cursor />
+      <ScrollBlur />
       <Nav />
       <main>
         <Hero />
-        <Reveal variant="blur"><Marquee /></Reveal>
-        <Reveal variant="blur"><Services /></Reveal>
-        <Reveal variant="scale"><Cases /></Reveal>
-        <Reveal variant="blur"><Testimonials /></Reveal>
-        <Reveal variant="blur"><Process /></Reveal>
-        <Reveal variant="scale"><CTA /></Reveal>
+        <div className="scroll-blur"><Reveal variant="blur"><Marquee /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="blur"><Services /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="scale"><Cases /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="blur"><Testimonials /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="blur"><Process /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="scale"><CTA /></Reveal></div>
       </main>
-      <Reveal variant="blur"><Footer /></Reveal>
+      <div className="scroll-blur"><Reveal variant="blur"><Footer /></Reveal></div>
     </div>
   );
 }
