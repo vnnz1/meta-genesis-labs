@@ -245,109 +245,12 @@
   transform: scale(1);
 }
 
-/* ---------------------------------------------------------------
- * Depth of Field — STRUCTURAL, permanent blur layers.
- * These do not animate out. They define the cinematic z-axis of
- * the page: background sits far behind a thick film of blur,
- * midground hovers slightly out of focus, foreground is razor
- * sharp. Apply to absolutely positioned layers inside a section.
- * ------------------------------------------------------------- */
-.depth-bg  { filter: blur(32px); transform: scale(1.15); opacity: 0.55; }
-.depth-mid { filter: blur(14px); opacity: 0.75; }
-.depth-fg  { filter: blur(0); }
-
-/* Cinematic hero backdrop — pushes the scene into the distance
- * so the foreground type reads as a sharp, premium overlay.    */
-.hero-cine {
-  filter: blur(25px) saturate(115%);
-  transform: scale(1.18);
-  opacity: 0.7;
-}
-
-/* Atmospheric glow — large, soft, low-opacity radial light.
- * Drop into a relatively-positioned section as an absolute layer
- * with width/height + custom positioning. */
-.atmos-glow {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 9999px;
-  filter: blur(120px);
-  opacity: 0.35;
-  background: radial-gradient(
-    closest-side,
-    oklch(0.85 0.04 250 / 0.55),
-    oklch(0.85 0.04 250 / 0.18) 45%,
-    transparent 75%
-  );
-  mix-blend-mode: screen;
-}
-.atmos-glow-warm {
-  background: radial-gradient(
-    closest-side,
-    oklch(0.78 0.09 60 / 0.50),
-    oklch(0.78 0.09 60 / 0.14) 45%,
-    transparent 75%
-  );
-}
-.atmos-glow-cool {
-  background: radial-gradient(
-    closest-side,
-    oklch(0.78 0.08 240 / 0.55),
-    oklch(0.78 0.08 240 / 0.15) 45%,
-    transparent 75%
-  );
-}
-.atmos-glow-soft {
-  background: radial-gradient(
-    closest-side,
-    oklch(0.96 0.01 250 / 0.40),
-    transparent 70%
-  );
-  filter: blur(180px);
-  opacity: 0.25;
-}
-
-/* Premium glassmorphism — for navbar, cards, floating panels. */
-.glass-panel {
-  background: oklch(1 0 0 / 0.04);
-  border: 1px solid oklch(1 0 0 / 0.08);
-  backdrop-filter: blur(20px) saturate(140%);
-  box-shadow:
-    inset 0 1px 0 oklch(1 0 0 / 0.06),
-    0 30px 60px -30px oklch(0 0 0 / 0.6);
-}
-.glass-nav {
-  background: oklch(0.06 0 0 / 0.55);
-  border-bottom: 1px solid oklch(1 0 0 / 0.06);
-  backdrop-filter: blur(24px) saturate(140%);
-}
-
-/* Light bloom — soft halo behind headlines, CTAs, focal points.
- * Use as an absolutely-positioned sibling with negative inset. */
-.bloom-soft {
-  position: absolute;
-  inset: -25% -10%;
-  pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    oklch(0.92 0.02 250 / 0.18),
-    transparent 70%
-  );
-  filter: blur(40px);
-}
-.bloom-cta {
-  position: absolute;
-  inset: -60% -40%;
-  pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    oklch(0.97 0.01 250 / 0.35),
-    transparent 70%
-  );
-  filter: blur(50px);
-}
+/* Depth layers — background sits behind a soft film of blur,
+ * mid-layer slightly out of focus, foreground is razor-sharp.
+ * Combine on absolutely positioned children of a section. */
+.depth-bg     { filter: blur(8px); }
+.depth-mid    { filter: blur(3px); }
+.depth-fg     { filter: blur(0); }
 
 @media (prefers-reduced-motion: reduce) {
   .mf-reveal,

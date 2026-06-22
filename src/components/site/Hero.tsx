@@ -30,25 +30,9 @@ export function Hero() {
       id="top"
       className="grain relative isolate flex min-h-[100svh] w-full flex-col overflow-hidden bg-ink"
     >
-      {/* ── Z-axis composition ───────────────────────────────────
-         Layer 1 — atmospheric glows sit deepest, way out of focus.
-         Layer 2 — the 3D forge is pushed back (scale + blur).
-         Layer 3 — vignette anchors the type plane.
-         Layer 4 — content (in flow, z-10) stays razor sharp.
-         ─────────────────────────────────────────────────────── */}
-
-      {/* Atmospheric glow field — large, low-opacity light pools */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="atmos-glow atmos-glow-cool left-[-15%] top-[-10%] h-[55vmax] w-[55vmax]" />
-        <div className="atmos-glow atmos-glow-warm right-[-20%] top-[20%] h-[45vmax] w-[45vmax] opacity-25" />
-        <div className="atmos-glow atmos-glow-soft left-[20%] bottom-[-20%] h-[60vmax] w-[60vmax]" />
-      </div>
-
-      {/* Background 3D forge — pushed into the distance (cinema) */}
+      {/* Background 3D forge */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="hero-cine absolute inset-0">
-          <ForgeCanvas />
-        </div>
+        <ForgeCanvas />
         {/* Radial vignette to anchor type */}
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,transparent_0%,oklch(0.06_0_0/0.55)_55%,oklch(0.06_0_0)_85%)]" />
       </div>
@@ -66,9 +50,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Headline — sharp foreground, soft bloom behind */}
-        <div className="relative max-w-[1100px] py-8 sm:py-20">
-          <span aria-hidden className="bloom-soft" />
+        {/* Headline */}
+        <div className="max-w-[1100px] py-8 sm:py-20">
           <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
             [ 01 ] — Manifesto
           </p>
@@ -84,9 +67,8 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="group relative inline-flex items-center gap-3 rounded-full bg-bone px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90 sm:px-6 sm:py-3.5 sm:text-[11px]"
+                className="group inline-flex items-center gap-3 rounded-full bg-bone px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90 sm:px-6 sm:py-3.5 sm:text-[11px]"
               >
-                <span aria-hidden className="bloom-cta" />
                 Forjar um sistema
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>

@@ -9,8 +9,8 @@ const links = [
 
 export function Nav() {
   return (
-    <header className="glass-nav fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-10 sm:py-5">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-10 sm:py-6">
         <a href="#top" className="flex shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-bone sm:text-[11px]">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-bone" />
           MetaForge<span className="text-steel">®</span>
@@ -43,6 +43,7 @@ export function Nav() {
           </a>
         </Magnetic>
       </div>
+      <div className="hairline" />
     </header>
   );
 }
