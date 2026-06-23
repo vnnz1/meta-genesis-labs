@@ -5,6 +5,7 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
 import { Services } from "@/components/site/Services";
+import { AIRevenueEngine } from "@/components/site/AIRevenueEngine";
 import { Cases } from "@/components/site/Cases";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Process } from "@/components/site/Process";
@@ -46,6 +47,7 @@ function Index() {
       <main>
         <Hero />
         <div className="scroll-blur"><Reveal variant="blur"><Marquee /></Reveal></div>
+        <div className="scroll-blur"><Reveal variant="scale"><AIRevenueEngine /></Reveal></div>
         <div className="scroll-blur"><Reveal variant="blur"><Services /></Reveal></div>
         <div className="scroll-blur"><Reveal variant="scale"><Cases /></Reveal></div>
         <div className="scroll-blur"><Reveal variant="blur"><Testimonials /></Reveal></div>
