@@ -450,7 +450,6 @@ export function AIRevenueEngine() {
                 initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-12"
                 className="space-y-10 sm:space-y-12"
               >
                 <div className="flex flex-col gap-4 border-b border-[var(--mf-line)] pb-6 sm:flex-row sm:items-center sm:justify-between">
