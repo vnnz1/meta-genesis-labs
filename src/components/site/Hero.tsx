@@ -66,7 +66,9 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
             <Magnetic>
               <a
-                href="#contact"
+                href="https://wa.me/5511925111411?text=Olá%20MetaForge%2C%20quero%20forjar%20um%20sistema."
+                target="_blank"
+                rel="noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-bone px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90 sm:px-6 sm:py-3.5 sm:text-[11px]"
               >
                 Forjar um sistema
