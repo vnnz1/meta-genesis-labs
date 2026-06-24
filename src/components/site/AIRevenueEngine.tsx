@@ -321,7 +321,7 @@ export function AIRevenueEngine() {
     <section
       id="ai-revenue-engine"
       ref={sectionRef}
-      className="relative bg-[#050505] py-24 sm:py-36"
+      className="relative bg-[#050505] py-16 sm:py-24 lg:py-36"
       style={{ ["--mf-card" as string]: "#0A0A0A", ["--mf-line" as string]: "rgba(255,255,255,0.08)" }}
     >
       {/* Ambient glow — extremely subtle */}
@@ -332,7 +332,7 @@ export function AIRevenueEngine() {
         <div className="absolute left-1/2 top-[10%] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/[0.025] blur-[140px]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1200px] px-5 sm:px-10">
+      <div className="relative mx-auto max-w-[1200px] px-4 sm:px-8 lg:px-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
@@ -359,17 +359,17 @@ export function AIRevenueEngine() {
           initial={{ opacity: 0, y: 40, filter: "blur(14px)", scale: 0.985 }}
           animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="mt-14 overflow-hidden rounded-2xl border border-[var(--mf-line)] bg-[var(--mf-card)] shadow-[0_30px_120px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_0_rgba(255,255,255,0.04)] backdrop-blur-xl"
+          className="mt-10 overflow-hidden rounded-2xl border border-[var(--mf-line)] bg-[var(--mf-card)] shadow-[0_30px_120px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_0_rgba(255,255,255,0.04)] backdrop-blur-xl sm:mt-14"
         >
           {/* Terminal chrome */}
-          <div className="flex items-center justify-between border-b border-[var(--mf-line)] px-5 py-3.5 sm:px-7">
+          <div className="flex items-center justify-between gap-3 border-b border-[var(--mf-line)] px-4 py-3 sm:px-7 sm:py-3.5">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-white/15" />
                 <span className="h-2 w-2 rounded-full bg-white/15" />
                 <span className="h-2 w-2 rounded-full bg-white/15" />
               </div>
-              <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#8A8A8A] sm:text-[11px]">
+              <span className="ml-1 truncate font-mono text-[9px] uppercase tracking-[0.2em] text-[#8A8A8A] sm:ml-2 sm:text-[11px] sm:tracking-[0.22em]">
                 meta-genesis :: inference engine
               </span>
             </div>
@@ -386,29 +386,29 @@ export function AIRevenueEngine() {
           </div>
 
           {/* Body */}
-          <div className="px-5 py-8 sm:px-10 sm:py-12">
+          <div className="px-4 py-7 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
             {/* Input row — visible in idle / running */}
             {phase !== "result" && (
               <div className="mx-auto max-w-2xl">
                 <label className="block font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                   input :: setor / nicho
                 </label>
-                <div className="mt-3 flex items-stretch gap-2 rounded-xl border border-[var(--mf-line)] bg-black/40 p-1.5 transition-colors focus-within:border-white/25">
-                  <span className="flex items-center pl-3 font-mono text-sm text-[#8A8A8A]">›</span>
+                <div className="mt-3 flex flex-col gap-2 rounded-xl border border-[var(--mf-line)] bg-black/40 p-1.5 transition-colors focus-within:border-white/25 sm:flex-row sm:items-stretch">
+                  <span className="hidden items-center pl-3 font-mono text-sm text-[#8A8A8A] sm:flex">›</span>
                   <input
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && startAnalysis()}
                     placeholder="Digite seu nicho..."
                     disabled={phase === "running"}
-                    className="flex-1 bg-transparent px-2 py-3 font-mono text-sm text-white outline-none placeholder:text-[#5a5a5a] disabled:opacity-50"
+                    className="min-w-0 flex-1 bg-transparent px-3 py-3 font-mono text-sm text-white outline-none placeholder:text-[#5a5a5a] disabled:opacity-50"
                     spellCheck={false}
                     autoComplete="off"
                   />
                   <button
                     onClick={startAnalysis}
                     disabled={phase === "running"}
-                    className="group relative inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.28em] text-black transition-all hover:bg-[#D4D4D4] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-[#8A8A8A]"
+                    className="group relative inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white px-4 py-3 font-mono text-[10px] uppercase tracking-[0.28em] text-black transition-all hover:bg-[#D4D4D4] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-[#8A8A8A] sm:w-auto sm:py-2.5"
                   >
                     {phase === "running" ? "analisando" : "iniciar análise"}
                   </button>
@@ -428,9 +428,8 @@ export function AIRevenueEngine() {
                   ))}
                 </div>
 
-                {/* Typewriter log */}
                 {phase === "running" && (
-                  <div className="mt-8 rounded-xl border border-[var(--mf-line)] bg-black/40 p-5 font-mono text-[12.5px] leading-7 text-[#D4D4D4] sm:text-[13px]">
+                  <div className="mt-6 overflow-x-auto rounded-xl border border-[var(--mf-line)] bg-black/40 p-4 font-mono text-[11.5px] leading-6 text-[#D4D4D4] sm:mt-8 sm:p-5 sm:text-[13px] sm:leading-7">
                     {printed.map((l, i) => (
                       <div key={i} className="text-[#D4D4D4]">{l}</div>
                     ))}
@@ -451,10 +450,9 @@ export function AIRevenueEngine() {
                 initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-12"
+                className="space-y-10 sm:space-y-12"
               >
-                {/* Context strip */}
-                <div className="flex flex-col gap-3 border-b border-[var(--mf-line)] pb-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-4 border-b border-[var(--mf-line)] pb-6 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                       analysis :: complete
@@ -473,7 +471,7 @@ export function AIRevenueEngine() {
                 </div>
 
                 {/* 4 KPI tiles */}
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
                   {[
                     { label: "Potencial de crescimento", value: <Counter value={data.growth} prefix="+" suffix="%" /> },
                     { label: "Economia operacional", value: <Counter value={data.saving} prefix="R$ " /> },
@@ -485,12 +483,12 @@ export function AIRevenueEngine() {
                       initial={{ opacity: 0, y: 18, filter: "blur(10px)" }}
                       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                       transition={{ duration: 0.7, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                      className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-5 sm:p-6"
+                      className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-4 sm:p-5 lg:p-6"
                     >
-                      <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-[#8A8A8A]">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.24em] text-[#8A8A8A] sm:text-[10px] sm:tracking-[0.28em]">
                         {kpi.label}
                       </div>
-                      <div className="mt-4 font-display text-[clamp(1.6rem,3vw,2.4rem)] font-light leading-none tracking-[-0.02em] text-white">
+                      <div className="mt-3 font-display text-[clamp(1.35rem,4.5vw,2.4rem)] font-light leading-none tracking-[-0.02em] text-white sm:mt-4">
                         {kpi.value}
                       </div>
                     </motion.div>
@@ -498,17 +496,17 @@ export function AIRevenueEngine() {
                 </div>
 
                 {/* Executive summary */}
-                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-6 sm:p-8">
+                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-5 sm:p-7 lg:p-8">
                   <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                     análise executiva
                   </p>
-                  <p className="mt-4 max-w-3xl text-[15px] font-light leading-relaxed text-[#D4D4D4] sm:text-base">
+                  <p className="mt-4 max-w-3xl text-[14px] font-light leading-relaxed text-[#D4D4D4] sm:text-base">
                     {data.summary(analyzedNiche)}
                   </p>
                 </div>
 
                 {/* Chart */}
-                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-6 sm:p-8">
+                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-5 sm:p-7 lg:p-8">
                   <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
@@ -533,7 +531,7 @@ export function AIRevenueEngine() {
                 </div>
 
                 {/* Opportunities */}
-                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-6 sm:p-8">
+                <div className="rounded-xl border border-[var(--mf-line)] bg-black/40 p-5 sm:p-7 lg:p-8">
                   <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                     oportunidades identificadas
                   </p>
@@ -563,11 +561,11 @@ export function AIRevenueEngine() {
                 </div>
 
                 {/* ROI estimation */}
-                <div className="rounded-xl border border-[var(--mf-line)] bg-gradient-to-b from-white/[0.025] to-transparent p-6 sm:p-10">
+                <div className="rounded-xl border border-[var(--mf-line)] bg-gradient-to-b from-white/[0.025] to-transparent p-5 sm:p-8 lg:p-10">
                   <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                     estimativa de retorno
                   </p>
-                  <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-10">
+                  <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-4 sm:gap-8 lg:gap-10">
                     {[
                       { l: "Investimento tradicional", v: `R$ ${formatBRL(data.investmentTraditional)}`, dim: true },
                       { l: "MetaForge Performance System", v: `R$ ${formatBRL(data.investmentMetaforge)}` },
@@ -593,12 +591,11 @@ export function AIRevenueEngine() {
                   </div>
                 </div>
 
-                {/* CTA */}
-                <div className="overflow-hidden rounded-2xl border border-[var(--mf-line)] bg-[#0A0A0A] p-8 text-center sm:p-12">
-                  <h3 className="mx-auto max-w-2xl font-display text-[clamp(1.5rem,3vw,2.4rem)] font-light leading-[1.1] tracking-[-0.02em] text-white">
+                <div className="overflow-hidden rounded-2xl border border-[var(--mf-line)] bg-[#0A0A0A] p-6 text-center sm:p-10 lg:p-12">
+                  <h3 className="mx-auto max-w-2xl font-display text-[clamp(1.4rem,4.5vw,2.4rem)] font-light leading-[1.1] tracking-[-0.02em] text-white">
                     Sua empresa está operando abaixo do potencial.
                   </h3>
-                  <p className="mx-auto mt-5 max-w-xl text-[14.5px] font-light leading-relaxed text-[#8A8A8A]">
+                  <p className="mx-auto mt-4 max-w-xl text-[13.5px] font-light leading-relaxed text-[#8A8A8A] sm:mt-5 sm:text-[14.5px]">
                     Receba gratuitamente um diagnóstico estratégico personalizado e
                     descubra quais oportunidades estão sendo perdidas neste momento.
                   </p>
@@ -606,9 +603,9 @@ export function AIRevenueEngine() {
                     href={waLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.28em] text-black transition-all hover:bg-[#D4D4D4] sm:px-8"
+                    className="mt-7 inline-flex items-center justify-center gap-3 rounded-full bg-white px-5 py-3.5 font-mono text-[10px] uppercase tracking-[0.24em] text-black transition-all hover:bg-[#D4D4D4] sm:mt-8 sm:px-8 sm:text-[11px] sm:tracking-[0.28em]"
                   >
-                    Solicitar diagnóstico estratégico
+                    Falar no WhatsApp · +55 11 92511-1411
                     <span aria-hidden>→</span>
                   </a>
                 </div>
@@ -617,10 +614,10 @@ export function AIRevenueEngine() {
           </div>
 
           {/* Terminal footer */}
-          <div className="flex items-center justify-between border-t border-[var(--mf-line)] px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[#8A8A8A] sm:px-7">
-            <span>secure :: tls 1.3</span>
+          <div className="flex items-center justify-between gap-3 border-t border-[var(--mf-line)] px-4 py-3 font-mono text-[9px] uppercase tracking-[0.2em] text-[#8A8A8A] sm:px-7 sm:text-[10px] sm:tracking-[0.22em]">
+            <span className="truncate">secure :: tls 1.3</span>
             <span className="hidden sm:inline">© metaforge — proprietary tech</span>
-            <span>node :: br-sa-1</span>
+            <span className="shrink-0">br-sa-1</span>
           </div>
         </motion.div>
       </div>

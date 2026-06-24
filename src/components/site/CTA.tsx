@@ -1,9 +1,15 @@
 import { Magnetic } from "./Magnetic";
 
+const WA_URL =
+  "https://wa.me/5511925111411?text=" +
+  encodeURIComponent(
+    "Olá MetaForge, quero contratar os serviços e iniciar um diagnóstico estratégico.",
+  );
+
 export function CTA() {
   return (
     <section id="contact" className="relative overflow-hidden bg-ink">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-48">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-10 sm:py-36 lg:py-48">
         <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel sm:text-[11px]">
           [ 05 ] — Próximo ciclo
         </p>
@@ -12,25 +18,29 @@ export function CTA() {
           sistema que <span className="text-bone">não exista ainda</span>, nós o forjamos.
         </h2>
 
-        <div className="mt-12 grid gap-8 border-t border-bone/10 pt-10 sm:mt-14 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+        <div className="mt-12 grid gap-8 border-t border-bone/10 pt-10 sm:mt-14 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0 space-y-2">
             <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel">
-              Canal direto
+              Canal direto · WhatsApp
             </div>
             <a
-              href="mailto:hello@metaforge.studio"
+              href={WA_URL}
+              target="_blank"
+              rel="noreferrer"
               className="block break-all font-display text-2xl font-light tracking-[-0.01em] text-bone underline-offset-8 hover:underline sm:text-4xl lg:text-5xl"
             >
-              hello@metaforge.studio
+              +55 11 92511-1411
             </a>
           </div>
 
           <Magnetic>
             <a
-              href="mailto:hello@metaforge.studio"
-              className="group inline-flex items-center gap-3 rounded-full bg-bone px-8 py-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90"
+              href={WA_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full bg-bone px-6 py-3.5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-colors hover:bg-bone/90 sm:px-8 sm:py-4 sm:text-[11px]"
             >
-              Iniciar conversa
+              Contratar via WhatsApp
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
           </Magnetic>

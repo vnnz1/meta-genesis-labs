@@ -18,8 +18,13 @@ export function Footer() {
 
         <div className="flex flex-col gap-2">
           <span className="text-bone">Contato</span>
-          <a href="mailto:hello@metaforge.studio" className="lowercase hover:text-bone">
-            hello@metaforge.studio
+          <a
+            href="https://wa.me/5511925111411"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-bone"
+          >
+            WhatsApp · +55 11 92511-1411
           </a>
           <span>São Paulo · Berlin</span>
         </div>
