@@ -21,15 +21,13 @@ export function CTA() {
         <div className="mt-12 grid gap-8 border-t border-bone/10 pt-10 sm:mt-14 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0 space-y-2">
             <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-steel">
-              Canal direto · WhatsApp
+              Canal direto
             </div>
             <a
-              href={WA_URL}
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:hello@metaforge.studio"
               className="block break-all font-display text-2xl font-light tracking-[-0.01em] text-bone underline-offset-8 hover:underline sm:text-4xl lg:text-5xl"
             >
-              +55 11 92511-1411
+              hello@metaforge.studio
             </a>
           </div>
 
