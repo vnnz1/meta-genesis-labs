@@ -386,31 +386,31 @@ export function AIRevenueEngine() {
           </div>
 
           {/* Body */}
-          <div className="px-4 py-7 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+          <div className="px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
             {/* Input row — visible in idle / running */}
             {phase !== "result" && (
               <div className="mx-auto max-w-2xl">
                 <label className="block font-mono text-[10px] uppercase tracking-[0.32em] text-[#8A8A8A]">
                   input :: setor / nicho
                 </label>
-                <div className="mt-3 flex flex-col gap-2 rounded-xl border border-[var(--mf-line)] bg-black/40 p-1.5 transition-colors focus-within:border-white/25 sm:flex-row sm:items-stretch">
-                  <span className="hidden items-center pl-3 font-mono text-sm text-[#8A8A8A] sm:flex">›</span>
+                <div className="mt-3 flex items-stretch gap-1.5 rounded-xl border border-[var(--mf-line)] bg-black/40 p-1.5 transition-colors focus-within:border-white/25">
+                  <span className="flex items-center pl-2 font-mono text-sm text-[#8A8A8A] sm:pl-3">›</span>
                   <input
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && startAnalysis()}
                     placeholder="Digite seu nicho..."
                     disabled={phase === "running"}
-                    className="min-w-0 flex-1 bg-transparent px-3 py-3 font-mono text-sm text-white outline-none placeholder:text-[#5a5a5a] disabled:opacity-50"
+                    className="min-w-0 flex-1 bg-transparent px-2 py-2.5 font-mono text-[13px] text-white outline-none placeholder:text-[#5a5a5a] disabled:opacity-50 sm:text-sm"
                     spellCheck={false}
                     autoComplete="off"
                   />
                   <button
                     onClick={startAnalysis}
                     disabled={phase === "running"}
-                    className="group relative inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white px-4 py-3 font-mono text-[10px] uppercase tracking-[0.28em] text-black transition-all hover:bg-[#D4D4D4] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-[#8A8A8A] sm:w-auto sm:py-2.5"
+                    className="group relative inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-white/10 bg-white px-3 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-black transition-all hover:bg-[#D4D4D4] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-[#8A8A8A] sm:px-5 sm:py-2.5 sm:text-[10px] sm:tracking-[0.28em]"
                   >
-                    {phase === "running" ? "analisando" : "iniciar análise"}
+                    {phase === "running" ? "analisando" : "analisar"}
                   </button>
                 </div>
 
