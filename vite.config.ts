@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force Nitro to build the Netlify preset so SSR + all routes work on Netlify
+  // (functions handler + auto-generated _redirects). Avoids 404 on refresh / deep links.
+  nitro: { preset: "netlify" },
 });
