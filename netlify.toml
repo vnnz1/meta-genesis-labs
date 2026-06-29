@@ -1,8 +1,7 @@
+# Nitro (TanStack Start SSR) builds the Netlify function handler and writes
+# its own `_redirects` with the SSR catch-all when built with the `netlify`
+# preset (set in vite.config.ts via `nitro.preset`). We only declare the
+# build command and publish dir here so Netlify picks up the SSR output.
 [build]
   command = "bun run build"
   publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
